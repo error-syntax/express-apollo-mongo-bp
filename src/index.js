@@ -23,7 +23,7 @@ const startServer = async () => {
   });
 
   // connecting to MongoDB
-  await mongoose.connect(`mongodb+srv://${MONGODB_USERNAME}:${MONGODB_PASS}@cluster0-uzzk2.mongodb.net/test?retryWrites=true&w=majority`, { useNewUrlParser: true, useUnifiedTopology: true });
+  await mongoose.connect(`mongodb+srv://${MONGODB_USERNAME}:${MONGODB_PASS}@${MONGODB_URI}`, { useNewUrlParser: true, useUnifiedTopology: true });
 
   // apply ApolloServer to our express server to handle GraphQL req 
   server.applyMiddleware({ app });

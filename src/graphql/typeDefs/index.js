@@ -8,11 +8,13 @@ export const typeDefs = gql`
 
   type Query {
     hello: String!,
-    getCats: [Cat!]!
+    getCats: [Cat!]!,
+    getSomeCats(name: String!): [Cat!]
   }
 
 
   type Mutation {
-    createCat(name: String!): Cat!
+    createCat(name: String!): Cat!,
+    deleteCats(name: String!): String
   }
 `;
